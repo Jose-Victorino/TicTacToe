@@ -1,0 +1,102 @@
+/*color pallet*/
+:root{
+    --white1: hsl(0, 0%, 89%);
+    --white2: hsl(0, 0%, 64%);
+    --black1: hsl(222, 4%, 27%);
+    --black2: hsl(222, 4%, 20%);
+    --black3: hsl(222, 4%, 16%);
+    --black4: hsl(222, 4%, 13%);
+    --black5: hsl(220, 6%, 10%);
+    --black6: hsl(222, 4%, 7%);
+    --black7: hsl(222, 4%, 5%);
+    --blue1: hsl(222, 100%, 45%);
+    --blue2: hsl(222, 67%, 39%);
+}
+/*Custom Scroll Bar*/
+::-webkit-scrollbar{
+    height: 8px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--background);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--blue2);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--blue1);
+}
+/*general style*/
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background: var(--black4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* main */
+main{
+    font-family: 'poppins';
+    color: var(--white1);
+    width: min(300px, calc(100vw - 34px));
+    aspect-ratio: 1;
+}
+.winner{
+    text-align: center;
+    height: 24px;
+}
+p{
+    height: 24px;
+}
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.board div{
+    font-size: clamp(2rem, 16vw, 3rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+}
+.board :nth-child(4),
+.board :nth-child(5),
+.board :nth-child(6){
+    border-top: 2px solid var(--black1);
+    border-bottom: 2px solid var(--black1);
+}
+.board :nth-child(2),
+.board :nth-child(5),
+.board :nth-child(8){
+    border-left: 2px solid var(--black1);
+    border-right: 2px solid var(--black1);
+}
+.X::after{
+    content: 'X';
+}
+.O::after{
+    content: 'O';
+}
+.btn{
+    text-align: center;
+    margin-top: 12px;
+}
+button{
+    background: transparent;
+    color: var(--white1);
+    padding: 0.35rem 1rem;
+    border: 1px solid var(--white2);
+    border-radius: 7px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    border: 1px solid var(--white1);
+}
